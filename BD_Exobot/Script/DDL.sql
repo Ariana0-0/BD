@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS IABot;
 
 CREATE TABLE CatalogoTipo (
     IdCatalogoTipo INTEGER      NOT NULL PRIMARY KEY AUTOINCREMENT
-   ,Nombre         VARCHAR(10)  NOT NULL UNIQUE
+   ,Nombre         VARCHAR(20)  NOT NULL UNIQUE
    ,Descripcion    VARCHAR(90)
 
    ,Estado         VARCHAR(1)   NOT NULL DEFAULT('A')

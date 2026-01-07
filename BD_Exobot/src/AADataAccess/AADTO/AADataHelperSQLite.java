@@ -12,7 +12,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public abstract class AADataHelperSQLite {
-    private static final String DBPathConnection = "jdbc:sqlite:DataBase//EXOBOT.sqlite"; 
+        static {
+        try {
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private static final String DBPathConnection = "jdbc:sqlite:BD_Exobot/DataBase/AAExobotDB.sqlite"; 
     private static Connection conn = null;
     
     private DateTimeFormatter   dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  

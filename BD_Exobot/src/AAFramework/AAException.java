@@ -1,14 +1,17 @@
 package AAFramework;
 
 public class AAException extends Exception {
-    
-    public AAException(String e, String clase, String metodo) {
-        //grabar el log
-        //System.out.println("[ERROR APP --> LOG] " + clase + "." + metodo + " : " + e);
+    private String clase;
+    private String metodo;
+
+    public AAException(String mensaje, String clase, String metodo) {
+        super(mensaje); // 🔥 ESTO ES CLAVE
+        this.clase = clase;
+        this.metodo = metodo;
     }
 
     @Override
     public String toString() {
-        return " ¿Qué Miras? D: ";
+        return "[ERROR] " + clase + "." + metodo + " -> " + getMessage();
     }
 }

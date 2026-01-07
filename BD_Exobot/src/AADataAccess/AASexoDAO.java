@@ -104,7 +104,7 @@ public class AASexoDAO extends AADataHelperSQLite implements AAIDAO<AASexoDTO> {
     
     @Override
     public AASexoDTO readById(Integer AAid) throws Exception {
-        AASexoDTO s = new AASexoDTO();
+        AASexoDTO s = null;
         String query = "SELECT IdCatalogo "
                     + ",IdCatalogoTipo "
                     + ",Nombre "
